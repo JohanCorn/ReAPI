@@ -644,7 +644,7 @@ typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckGameOver;
 
 // CHalfLifeMultiplay::CheckTimeLimit hook
 typedef IHookChain<bool> IReGameHook_CSGameRules_CheckTimeLimit;
-typedef IHookChainRegistry<BOboolOL> IReGameHookRegistry_CSGameRules_CheckTimeLimit;
+typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckTimeLimit;
 
 // CHalfLifeMultiplay::CheckFragLimit hook
 typedef IHookChain<bool> IReGameHook_CSGameRules_CheckFragLimit;
