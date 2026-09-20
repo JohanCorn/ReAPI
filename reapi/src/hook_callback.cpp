@@ -1766,6 +1766,56 @@ void CSGameRules_SendDeathMessage(IReGameHook_CSGameRules_SendDeathMessage *chai
 	callVoidForward(RG_CSGameRules_SendDeathMessage, original, indexOfPDataAmx(pKiller), indexOfEdict(pVictim->pev), indexOfPDataAmx(pAssister), indexOfEdictAmx(pevInflictor), killerWeaponName, iDeathMessageFlags, iRarityOfKill);
 }
 
+bool CSGameRules_CheckGameOver(IReGameHook_CSGameRules_CheckGameOver *chain)
+{
+	auto original = [chain]()
+	{
+		return chain->callNext();
+	};
+
+	return callForward<bool>(RG_CSGameRules_CheckGameOver, original);
+}
+
+bool CSGameRules_CheckTimeLimit(IReGameHook_CSGameRules_CheckTimeLimit *chain)
+{
+	auto original = [chain]()
+	{
+		return chain->callNext();
+	};
+
+	return callForward<bool>(RG_CSGameRules_CheckTimeLimit, original);
+}
+
+bool CSGameRules_CheckFragLimit(IReGameHook_CSGameRules_CheckFragLimit *chain)
+{
+	auto original = [chain]()
+	{
+		return chain->callNext();
+	};
+
+	return callForward<bool>(RG_CSGameRules_CheckFragLimit, original);
+}
+
+bool CSGameRules_CheckMaxRounds(IReGameHook_CSGameRules_CheckMaxRounds *chain)
+{
+	auto original = [chain]()
+	{
+		return chain->callNext();
+	};
+
+	return callForward<bool>(RG_CSGameRules_CheckMaxRounds, original);
+}
+
+bool CSGameRules_CheckWinLimit(IReGameHook_CSGameRules_CheckWinLimit *chain)
+{
+	auto original = [chain]()
+	{
+		return chain->callNext();
+	};
+
+	return callForward<bool>(RG_CSGameRules_CheckWinLimit, original);
+}
+
 void CBasePlayer_UpdateStatusBar(IReGameHook_CBasePlayer_UpdateStatusBar *chain, CBasePlayer *pthis)
 {
 	auto original = [chain](int _pthis)

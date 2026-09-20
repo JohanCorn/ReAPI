@@ -574,6 +574,11 @@ void CBasePlayer_PlayerDeathThink(IReGameHook_CBasePlayer_PlayerDeathThink *chai
 void CBasePlayer_Observer_Think(IReGameHook_CBasePlayer_Observer_Think *chain, CBasePlayer *pthis);
 void CBasePlayer_RemoveAllItems(IReGameHook_CBasePlayer_RemoveAllItems *chain, CBasePlayer *pthis, BOOL removeSuit);
 void CSGameRules_SendDeathMessage(IReGameHook_CSGameRules_SendDeathMessage *chain, CBaseEntity *pKiller, CBasePlayer *pVictim, CBasePlayer *pAssister, entvars_t *pevInflictor, const char *killerWeaponName, int iDeathMessageFlags, int iRarityOfKill);
+bool CSGameRules_CheckGameOver(IReGameHook_CSGameRules_CheckGameOver *chain);
+bool CSGameRules_CheckTimeLimit(IReGameHook_CSGameRules_CheckTimeLimit *chain);
+bool CSGameRules_CheckFragLimit(IReGameHook_CSGameRules_CheckFragLimit *chain);
+bool CSGameRules_CheckMaxRounds(IReGameHook_CSGameRules_CheckMaxRounds *chain);
+bool CSGameRules_CheckWinLimit(IReGameHook_CSGameRules_CheckWinLimit *chain);
 void CBasePlayer_UpdateStatusBar(IReGameHook_CBasePlayer_UpdateStatusBar *chain, CBasePlayer *pthis);
 void CBasePlayer_TakeDamageImpulse(IReGameHook_CBasePlayer_TakeDamageImpulse *chain, CBasePlayer *pthis, CBasePlayer *pAttacker, float flKnockbackForce, float flVelModifier);
 void SendSayMessage(IReGameHook_SendSayMessage *chain, CBasePlayer *pPlayer, const char *pszCmd, BOOL teamonly, const char *pszText, const char *pszFormat, const char *pszConsoleFormat, bool bSenderDead, const char *placeName, bool consoleUsesPlaceName);
