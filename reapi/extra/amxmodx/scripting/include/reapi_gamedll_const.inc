@@ -1285,6 +1285,49 @@ enum GamedllFunc_CSGameRules
 	* Params:           (const pKiller, const pVictim, const pAssister, const pevInflictor, const killerWeaponName[], const DeathMessageFlags:iDeathMessageFlags, const KillRarity:iRarityOfKill)
 	*/
 	RG_CSGameRules_SendDeathMessage,
+
+	/*
+	* Description:      Called every server frame. While the game is over, it handles the intermission and changes the level when it ends.
+	*                   Returns true if the game is over.
+	* @note             Superceding it while the game is over prevents the level from changing.
+	* Return type:      bool
+	* Params:           ()
+	*/
+	RG_CSGameRules_CheckGameOver,
+
+	/*
+	* Description:      Called every server frame to check mp_timelimit. Goes to the intermission when the time limit is met.
+	*                   Returns true if the time limit is met.
+	* @note             Superceding it also skips the update of the timeleft cvar.
+	* Return type:      bool
+	* Params:           ()
+	*/
+	RG_CSGameRules_CheckTimeLimit,
+
+	/*
+	* Description:      Called every server frame to check mp_fraglimit. Goes to the intermission when a player reaches the frag limit.
+	*                   Returns true if the frag limit is met.
+	* @note             Superceding it also skips the update of the fragsleft cvar.
+	* Return type:      bool
+	* Params:           ()
+	*/
+	RG_CSGameRules_CheckFragLimit,
+
+	/*
+	* Description:      Called every server frame to check mp_maxrounds. Goes to the intermission when the maximum number of rounds is played.
+	*                   Returns true if the maximum is reached.
+	* Return type:      bool
+	* Params:           ()
+	*/
+	RG_CSGameRules_CheckMaxRounds,
+
+	/*
+	* Description:      Called every server frame to check mp_winlimit. Goes to the intermission when a team wins the specified number of rounds.
+	*                   Returns true if the win limit is met.
+	* Return type:      bool
+	* Params:           ()
+	*/
+	RG_CSGameRules_CheckWinLimit,
 };
 
 /**
